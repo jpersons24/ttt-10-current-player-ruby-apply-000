@@ -1,13 +1,9 @@
-require_relative '../lib/current_player.rb'
-
-board1 = ["O", " ", " ", " ", "X", " ", " ", " ", "X"]
-board2 = ["O", " ", " ", " ", "X", " ", " ", "O", "X"]
-
-def turn_count(board1)
-  counter = 0
-  board1.each do |occupations|
-    if occupations < 9
-      counter += 1
+def turn_count(board)
+  turns = 0
+  board.each do |space|
+    if space == "X" || space == "O"
+      turns +- 1
     end
-    return counter
+  end
+  return turns
 end
